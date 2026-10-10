@@ -1,0 +1,91 @@
+:root {
+  --bg: #12141a;
+  --panel: #1b1e27;
+  --border: #2c3040;
+  --text: #e6e6e6;
+  --muted: #9097a8;
+  --accent: #f8b700;
+
+  --q0: #9d9d9d; --q1: #ffffff; --q2: #1eff00; --q3: #3d9bff;
+  --q4: #a335ee; --q5: #ff8000; --q6: #e6cc80; --q7: #00ccff;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 15px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+main { max-width: 960px; margin: 0 auto; padding: 32px 16px; }
+
+h1 { margin: 0 0 4px; color: var(--accent); }
+h2 { font-size: 1.15rem; margin: 0 0 12px; }
+.hint { color: var(--muted); margin: 0 0 16px; }
+code { background: var(--panel); padding: 1px 5px; border-radius: 4px; }
+
+textarea {
+  width: 100%;
+  height: 200px;
+  resize: vertical;
+  padding: 12px;
+  background: var(--panel);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font: 12px/1.4 ui-monospace, Consolas, monospace;
+}
+
+button {
+  margin-top: 12px;
+  padding: 10px 20px;
+  background: var(--accent);
+  color: #1a1a1a;
+  border: 0;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+}
+button:disabled { opacity: .6; cursor: wait; }
+
+.status { margin-top: 20px; color: var(--muted); }
+.status.error { color: #ff6b6b; }
+
+#results { margin-top: 28px; }
+
+table { width: 100%; border-collapse: collapse; background: var(--panel); border-radius: 8px; overflow: hidden; }
+th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border); vertical-align: middle; }
+th { color: var(--muted); font-weight: 500; font-size: .85rem; text-transform: uppercase; letter-spacing: .04em; }
+tr:last-child td { border-bottom: 0; }
+
+.cell { display: flex; align-items: center; gap: 10px; }
+.icon { width: 36px; height: 36px; border-radius: 4px; border: 1px solid var(--border); flex: none; }
+.icon.small { width: 24px; height: 24px; }
+a { color: #8fc3ff; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.sub { color: var(--muted); font-size: .85rem; }
+
+.q0 { color: var(--q0); } .q1 { color: var(--q1); } .q2 { color: var(--q2); } .q3 { color: var(--q3); }
+.q4 { color: var(--q4); } .q5 { color: var(--q5); } .q6 { color: var(--q6); } .q7 { color: var(--q7); }
+
+.badge { display: inline-block; padding: 2px 8px; border-radius: 999px; font-size: .85rem; font-weight: 600; background: #2a2e3a; }
+.badge.mythic { background: #4a2463; color: #e0b3ff; }
+.badge.heroic { background: #1f3a5c; color: #9ccaff; }
+.badge.normal { background: #1f4a2a; color: #a6f0b5; }
+.badge.lfr { background: #3a3a3a; color: #ccc; }
+
+/* Class colours */
+.c-deathknight { color: #c41e3a; } .c-demonhunter { color: #a330c9; } .c-druid { color: #ff7c0a; }
+.c-evoker { color: #33937f; } .c-hunter { color: #aad372; } .c-mage { color: #3fc7eb; }
+.c-monk { color: #00ff98; } .c-paladin { color: #f48cba; } .c-priest { color: #ffffff; }
+.c-rogue { color: #fff468; } .c-shaman { color: #0070dd; } .c-warlock { color: #8788ee; }
+.c-warrior { color: #c69b6d; }
+
+@media (max-width: 640px) {
+  thead { display: none; }
+  tr { display: grid; grid-template-columns: 1fr 1fr; border-bottom: 1px solid var(--border); }
+  td { border: 0; }
+  td:first-child { grid-column: 1 / -1; }
+}

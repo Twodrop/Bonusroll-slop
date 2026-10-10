@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bonus Roll Viewer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <h1>Bonus Roll Viewer</h1>
+    <p class="hint">Paste your SimulationCraft addon export (<code>/simc</code>) below.</p>
+
+    <form id="form">
+      <textarea id="input" spellcheck="false" placeholder="# Name - Spec - date - EU/Realm&#10;..."></textarea>
+      <button type="submit">Show bonus rolls</button>
+    </form>
+
+    <p id="status" class="status" hidden></p>
+
+    <section id="results" hidden>
+      <h2 id="character"></h2>
+      <table>
+        <thead>
+          <tr><th>Item</th><th>Boss</th><th>Difficulty</th><th>Spec</th></tr>
+        </thead>
+        <tbody id="rows"></tbody>
+      </table>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>

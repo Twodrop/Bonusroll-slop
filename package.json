@@ -1,0 +1,14 @@
+{
+  "name": "bonusroll-slop",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Show bonus roll history from a SimulationCraft addon export",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}
